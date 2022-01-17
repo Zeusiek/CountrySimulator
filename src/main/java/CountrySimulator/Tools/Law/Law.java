@@ -6,6 +6,8 @@ import CountrySimulator.Tools.Happiness;
  * Abstract Law class can be used to create new law regulations.
  * Natively Law class contains Title and Happiness effect.
  * </ul>
+ * @version 0.3
+ * @since 0.0.2
  */
 public abstract class Law{
     private String title;

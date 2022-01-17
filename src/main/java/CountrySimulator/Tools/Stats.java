@@ -14,6 +14,7 @@ import CountrySimulator.Exceptions.ValueException;
  * </ol>
  * @since 0.0.1
  * @author Mateusz Targoński
+ * @see Builder
  */
 public class Stats{
     private float employmentRate;
@@ -43,6 +44,7 @@ public class Stats{
      * @param value to set rate on.
      * @throws ValueException Value could be too low or too high.
      * @since 0.0.2
+     * @see Rate
      */
     public void setRate(Rate rate, float value) throws ValueException{
         if(value < 0 && rate != Rate.INFLATION)

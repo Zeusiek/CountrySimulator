@@ -1,7 +1,13 @@
+import CountrySimulator.Annotations.Experimental;
 import CountrySimulator.Country;
 import CountrySimulator.Exceptions.ValueException;
 import CountrySimulator.Tools.Happiness;
+import CountrySimulator.Tools.Law.PoliticalSystem;
+import CountrySimulator.Tools.Money.Currency;
+import CountrySimulator.Tools.PoliticalStats;
 
+
+@Experimental
 public class Main{
     public static void main(String[] args) throws ValueException{
 
@@ -9,6 +15,9 @@ public class Main{
         happiness.change(Happiness.Field.ADULTS, 2);
         Country country = new Country();
         country.getPopulation();
+        PoliticalStats politicalStats = new PoliticalStats();
+        PoliticalSystem system;
+        Currency currency = new Currency("PLN");
 
     }
 }

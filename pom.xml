@@ -6,11 +6,12 @@
 
     <groupId>com.targonski</groupId>
     <artifactId>CountrySimulator</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
+
 
 </project>

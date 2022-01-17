@@ -14,6 +14,7 @@ import CountrySimulator.Tools.Law.PoliticalSystem;
  * </ol>
  * @since 0.0.1
  * @author Mateusz Targoński
+ * @version 0.3
  */
 public class PoliticalStats{
     private float conservatism;
@@ -32,6 +33,14 @@ public class PoliticalStats{
         system = politicalStats.getSystem();
     }
 
+    /**
+     * Sets one of the statistics to given value.
+     * Method corrects opposite value to make a sum of 100%.
+     * @param s Statistic to change.
+     * @param value Percentage value to set statistic on between 0 and 100.
+     * @throws ValueException Value could be too high or too low.
+     * @since 0.0.2
+     */
     public void setStats(Stats s, float value) throws ValueException{
         if(value>100f) throw new ValueException(ValueException.Type.HIGH);
         else if(value < 0f) throw new ValueException(ValueException.Type.HIGH);
@@ -44,6 +53,10 @@ public class PoliticalStats{
         checkStats(s);
     }
 
+    /**
+     * @since 0.0.2
+     * @param s Statistic to change
+     */
     private void checkStats(Stats s){
         switch (s){
             case CONSERVATISM -> liberalism = 100f-conservatism;

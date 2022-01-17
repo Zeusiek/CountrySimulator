@@ -7,6 +7,8 @@ import CountrySimulator.Exceptions.ValueException;
  * Happiness class shows happiness of different social classes.
  * @author Mateusz Targoński
  * @since 0.0.1
+ * @see Field
+ * @version 1.0
  */
 public class Happiness{
 
@@ -33,7 +35,6 @@ public class Happiness{
      * @param value Value to set field on.
      * @throws ValueException Value could be too low or too high.
      * @since 0.0.2
-     * @author Mateusz Targoński
      */
     public void change(Field field, float value) throws ValueException{
         if(value > 100f) throw new ValueException(ValueException.Type.HIGH);
@@ -61,7 +62,6 @@ public class Happiness{
      * @param field Wanted field.
      * @return Percentage of happiness.
      * @since 0.0.2
-     * @author Mateusz Targoński
      */
     public float get(Field field){
         return switch (field){
@@ -102,6 +102,7 @@ public class Happiness{
      * </ul>
      * @since 0.0.2
      * @author Mateusz Targoński
+     * @version 1.0
      */
     public enum Field{
         DRIVERS, RELIGION, PARENTS,
