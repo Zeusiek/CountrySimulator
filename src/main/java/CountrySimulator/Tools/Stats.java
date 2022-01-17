@@ -2,6 +2,19 @@ package CountrySimulator.Tools;
 
 import CountrySimulator.Exceptions.ValueException;
 
+/**
+ * Class that holds Statistics of the country.
+ * Statistics:
+ * <ol>
+ *     <li>Employment Rate</li>
+ *     <li>Inflation Rate</li>
+ *     <li>Religion Rate</li>
+ *     <li>Death Rate</li>
+ *     <li>Birth Rate</li>
+ * </ol>
+ * @since 0.0.1
+ * @author Mateusz Targoński
+ */
 public class Stats{
     private float employmentRate;
     private float inflationRate;
@@ -12,6 +25,7 @@ public class Stats{
     /**
      * @param rate to display.
      * @return percentage value of wanted rate.
+     * @since 0.0.2
      */
     public float getRate(Rate rate){
         return switch (rate){
@@ -28,6 +42,7 @@ public class Stats{
      * @param rate to change.
      * @param value to set rate on.
      * @throws ValueException Value could be too low or too high.
+     * @since 0.0.2
      */
     public void setRate(Rate rate, float value) throws ValueException{
         if(value < 0 && rate != Rate.INFLATION)
@@ -54,6 +69,7 @@ public class Stats{
      *     <li>BIRTH</li>
      *     <li>DEATH</li>
      * </ul>
+     * @since 0.0.2
      */
     public enum Rate{
         RELIGION, EMPLOYMENT, INFLATION,
@@ -62,6 +78,8 @@ public class Stats{
 
     /**
      * Stats Builder can be used to easily create new Stats object.
+     * @since 0.0.2
+     * @author Mateusz Targoński
      */
     public static class Builder{
         Stats stats = new Stats();
@@ -69,6 +87,7 @@ public class Stats{
          * @param employmentRate percentage value between 0 and 100.
          * @return Builder
          * @throws ValueException Value could be too low or too high.
+         * @since 0.0.2
          */
         public Builder employmentRate(float employmentRate) throws ValueException{
             stats.setRate(Rate.EMPLOYMENT, employmentRate);
@@ -79,6 +98,7 @@ public class Stats{
          * @param birthRate percentage value no lower than 0.
          * @return Builder
          * @throws ValueException Value could be too low or too high.
+         * @since 0.0.2
          */
         public Builder birthRate(float birthRate) throws ValueException{
             stats.setRate(Rate.BIRTH, birthRate);
@@ -89,6 +109,7 @@ public class Stats{
          * @param deathRate percentage value between 0 and 100.
          * @return Builder
          * @throws ValueException Value could be too low or too high.
+         * @since 0.0.2
          */
         public Builder deathRate(float deathRate) throws ValueException{
             stats.setRate(Rate.DEATH, deathRate);
