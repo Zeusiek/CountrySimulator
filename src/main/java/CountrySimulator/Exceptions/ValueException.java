@@ -6,7 +6,7 @@ package CountrySimulator.Exceptions;
  * @author Mateusz Targoński
  * @version 1.0
  */
-public class ValueException extends RuntimeException{
+public class ValueException extends Exception{
     public ValueException(Type t){
         super(t.toString());
     }
