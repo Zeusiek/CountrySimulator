@@ -46,6 +46,7 @@ public class Currency{
      * @return long
      * @since 0.0.2
      */
+    @Deprecated(forRemoval = true)
     public long value(){
         return totalValue;
     }

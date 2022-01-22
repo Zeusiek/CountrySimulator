@@ -2,7 +2,8 @@ import CountrySimulator.Annotations.Experimental;
 import CountrySimulator.Country;
 import CountrySimulator.Exceptions.ValueException;
 import CountrySimulator.Tools.Happiness;
-import CountrySimulator.Tools.Law.PoliticalSystem;
+import CountrySimulator.Tools.Law.PoliticalSystems.Monarchy;
+import CountrySimulator.Tools.Law.PoliticalSystems.PoliticalSystem;
 import CountrySimulator.Tools.Money.Currency;
 import CountrySimulator.Tools.PoliticalStats;
 
@@ -18,6 +19,9 @@ public class Main{
         PoliticalStats politicalStats = new PoliticalStats();
         PoliticalSystem system;
         Currency currency = new Currency("PLN");
-
+        currency.value();
+        PoliticalSystem[] systems = new PoliticalSystem[20];
+        PoliticalSystem s = Monarchy.ABSOLUTE_MONARCHY;
+        s.type();
     }
 }

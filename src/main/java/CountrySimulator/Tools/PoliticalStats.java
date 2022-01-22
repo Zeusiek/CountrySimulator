@@ -1,7 +1,7 @@
 package CountrySimulator.Tools;
 
 import CountrySimulator.Exceptions.ValueException;
-import CountrySimulator.Tools.Law.PoliticalSystem;
+import CountrySimulator.Tools.Law.PoliticalSystems.PoliticalSystem;
 
 /**
  * Class that holds Political Statistics of the country.
