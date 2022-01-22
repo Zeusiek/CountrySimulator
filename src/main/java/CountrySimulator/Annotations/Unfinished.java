@@ -10,7 +10,7 @@ import java.lang.annotation.*;
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.CONSTRUCTOR,ElementType.TYPE,ElementType.METHOD})
+@Target({ElementType.CONSTRUCTOR,ElementType.TYPE,ElementType.METHOD, ElementType.RECORD_COMPONENT})
 @Description("This element is unfinished. Do not use to prevent errors!")
 public @interface Unfinished{
 
