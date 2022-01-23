@@ -1,8 +1,9 @@
 package CountrySimulator.Tools.Law.PoliticalSystems;
 
 /**
- * Is variant of Political System. Indicates that Republic is ruling system.
+ * Is variant of Political System. Indicates that Republic is actual system.
  * @since 0.0.5
+ * @version 1.0
  * @author Mateusz Targoński
  * @see CountrySimulator.Tools.Law.PoliticalSystems.PoliticalSystem
  */

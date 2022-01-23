@@ -4,7 +4,7 @@ import CountrySimulator.Exceptions.ValueException;
 import CountrySimulator.Tools.Law.PoliticalSystems.PoliticalSystem;
 
 /**
- * Class that holds Political Statistics of the country.
+ * Class that holds Political Statistics of the country and its actual Political System.
  * Statistics:
  * <ol>
  *     <li>Conservatism</li>
@@ -14,14 +14,14 @@ import CountrySimulator.Tools.Law.PoliticalSystems.PoliticalSystem;
  * </ol>
  * @since 0.0.1
  * @author Mateusz Targoński
- * @version 0.3
+ * @version 0.5
  */
 public class PoliticalStats{
     private float conservatism;
     private float liberalism;
     private float socialism;
     private float capitalism;
-    private PoliticalSystem system;
+    private PoliticalSystem[] system;
 
     public PoliticalStats(){}
 
@@ -30,7 +30,7 @@ public class PoliticalStats{
         liberalism = politicalStats.getLiberalism();
         socialism = politicalStats.getSocialism();
         capitalism = politicalStats.getCapitalism();
-        system = politicalStats.getSystem();
+        system = politicalStats.getPoliticalSystem();
     }
 
     /**
@@ -41,7 +41,7 @@ public class PoliticalStats{
      * @throws ValueException Value could be too high or too low.
      * @since 0.0.2
      */
-    public void setStats(Stats s, float value) throws ValueException{
+    public void setStats(Stats s, float value){
         if(value>100f) throw new ValueException(ValueException.Type.HIGH);
         else if(value < 0f) throw new ValueException(ValueException.Type.HIGH);
         switch (s){
@@ -54,6 +54,7 @@ public class PoliticalStats{
     }
 
     /**
+     * Protects correct percentage values.
      * @since 0.0.2
      * @param s Statistic to change
      */
@@ -67,15 +68,16 @@ public class PoliticalStats{
     }
 
     /**
+     * @see #setStats(Stats, float)
      * @since 0.0.2
      * @return Capitalism rate
-
      */
     public float getCapitalism(){
         return capitalism;
     }
 
     /**
+     * @see #setStats(Stats, float)
      * @since 0.0.2
      * @return Conservatism rate
      */
@@ -84,6 +86,7 @@ public class PoliticalStats{
     }
 
     /**
+     * @see #setStats(Stats, float)
      * @since 0.0.2
      * @return Liberalism rate
      */
@@ -92,6 +95,7 @@ public class PoliticalStats{
     }
 
     /**
+     * @see #setStats(Stats, float)
      * @since 0.0.2
      * @return Socialism rate
      */
@@ -100,18 +104,20 @@ public class PoliticalStats{
     }
 
     /**
+     * @see #setPoliticalSystem(PoliticalSystem...)
      * @since 0.0.2
      * @return PoliticalSystem
      */
-    public PoliticalSystem getSystem(){
+    public PoliticalSystem[] getPoliticalSystem(){
         return system;
     }
 
     /**
+     * @see #getPoliticalSystem()
      * @since 0.0.2
      * @param system Political system.
      */
-    public void setSystem(PoliticalSystem system){
+    public void setPoliticalSystem(PoliticalSystem... system){
         this.system = system;
     }
 

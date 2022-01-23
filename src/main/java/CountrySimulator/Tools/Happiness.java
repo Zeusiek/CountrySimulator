@@ -36,7 +36,7 @@ public class Happiness{
      * @throws ValueException Value could be too low or too high.
      * @since 0.0.2
      */
-    public void change(Field field, float value) throws ValueException{
+    public void change(Field field, float value){
         if(value > 100f) throw new ValueException(ValueException.Type.HIGH);
         else if(value < -100f) throw new ValueException(ValueException.Type.LOW);
         switch (field){

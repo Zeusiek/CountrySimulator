@@ -24,8 +24,9 @@ public class Stats{
     private float birthRate;
 
     /**
+     * Returns percentage value of wanted rate.
      * @param rate to display.
-     * @return percentage value of wanted rate.
+     * @return float
      * @since 0.0.2
      */
     public float getRate(Rate rate){
@@ -46,7 +47,7 @@ public class Stats{
      * @since 0.0.2
      * @see Rate
      */
-    public void setRate(Rate rate, float value) throws ValueException{
+    public void setRate(Rate rate, float value){
         if(value < 0 && rate != Rate.INFLATION)
             throw new ValueException(ValueException.Type.LOW);
         if(value > 100f && rate != Rate.BIRTH && rate != Rate.INFLATION)
@@ -139,7 +140,8 @@ public class Stats{
         }
 
         /**
-         * @return New Stats object
+         * Returns new Stats object.
+         * @return Stats
          */
         public Stats build(){
             return stats;

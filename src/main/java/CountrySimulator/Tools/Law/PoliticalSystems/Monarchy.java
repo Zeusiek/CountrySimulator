@@ -3,6 +3,7 @@ package CountrySimulator.Tools.Law.PoliticalSystems;
 /**
  * Is variant of Political System. Indicates that Monarchy is ruling system.
  * @since 0.0.5
+ * @version 1.0
  * @author Mateusz Targoński
  * @see CountrySimulator.Tools.Law.PoliticalSystems.PoliticalSystem
  */

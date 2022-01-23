@@ -10,7 +10,7 @@ import CountrySimulator.Exceptions.ValueException;
  */
 public class Population{
     private long population;
-    public Population(long population) throws ValueException{
+    public Population(long population){
         if(population < 0)
             throw new ValueException(ValueException.Type.LOW);
         this.population = population;

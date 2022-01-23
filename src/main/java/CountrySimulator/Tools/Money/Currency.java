@@ -8,7 +8,7 @@ package CountrySimulator.Tools.Money;
  */
 public class Currency{
     private String name;
-    private long totalValue;
+    private float priceRelativeToGold = 1.0f;
 
     public Currency(String name){
         this.name = name;
@@ -24,15 +24,6 @@ public class Currency{
     }
 
     /**
-     * Sets total produced currency.
-     * @param totalValue long
-     * @since 0.0.2
-     */
-    public void setTotalValue(long totalValue){
-        this.totalValue = totalValue;
-    }
-
-    /**
      * Returns name of the currency.
      * @return String
      * @since 0.0.2
@@ -42,12 +33,20 @@ public class Currency{
     }
 
     /**
-     * Returns value of the currency.
-     * @return long
-     * @since 0.0.2
+     * Returns value of the currency relative to a gold price.
+     * @return float
+     * @since 0.0.6
      */
-    @Deprecated(forRemoval = true)
-    public long value(){
-        return totalValue;
+    public float getPriceRelativeToGold(){
+        return priceRelativeToGold;
+    }
+
+    /**
+     * Sets value of the currency relative to a gold price.
+     * @param priceRelativeToGold float
+     * @since 0.0.6
+     */
+    public void setPriceRelativeToGold(float priceRelativeToGold){
+        this.priceRelativeToGold = priceRelativeToGold;
     }
 }
